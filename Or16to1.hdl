@@ -1,0 +1,24 @@
+CHIP Or16to1{
+	IN x[16];
+	OUT out;
+	
+	PARTS:
+	Or(a=x[0],b=x[1],out =xx1);
+	Or(a=x[2],b=x[3],out =xx2);
+	Or( a=x[4],b=x[5],out =xx3);
+	Or( a=x[6],b=x[7],out =xx4);
+	Or( a=x[8],b=x[9],out =xx5);
+	Or( a=x[10],b=x[11], out =xx6 );
+	Or( a=x[12],b=x[13], out =xx7 );
+	Or(a=x[14],b=x[15], out =xx8 );
+
+	Or( a=xx1, b=xx2,out =xxx1 );
+	Or( a=xx3, b=xx4,out =xxx2 );
+	Or( a=xx5, b=xx6,out =xxx3 );
+	Or( a=xx7, b=xx8,out =xxx4 );
+
+	Or( a=xxx1, b=xxx2,out =xxxx1 );
+	Or( a=xxx3, b=xxx4,out =xxxx2 );
+
+	Or( a=xxxx1, b=xxxx1,out =out );
+}

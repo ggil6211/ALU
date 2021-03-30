@@ -1,0 +1,18 @@
+ 
+CHIP AddAndChip{
+
+	IN
+	x[16],y[16], f;
+
+	OUT
+	result[16];
+
+	PARTS:
+
+	Add16(a=x, b=y, out=addxy);
+      	And16(a=x, b=y, out=andxy);
+      	Mux16(a=andxy, b=addxy, sel=f, out=result);
+
+}
+
+

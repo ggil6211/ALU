@@ -1,0 +1,15 @@
+CHIP NotYZeroY{
+
+	IN
+	y[16], zy, ny;
+
+	OUT
+	output[16];
+
+	PARTS:
+
+	Mux16(a=y, b=false, sel=zy, out=zeroy);
+     	Not16(in=zeroy, out=noty);
+     	Mux16(a=zeroy, b=noty, sel=ny, out=output);
+}
+

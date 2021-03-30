@@ -1,0 +1,15 @@
+CHIP OutNotOut{
+
+	IN
+	result[16], no;
+
+	OUT
+	ouputnotouput[16];
+
+	PARTS:
+
+	Not16(in=result, out=notresult);
+      	Mux16(a=result, b=notresult, sel=no, out=ouputnotouput);
+
+}
+	
